@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 1200px; /* Limit overall width */
+  width: 100%;
+}
+
+.game-title {
+  font-size: 2.8em;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.game-area {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 40px; /* Space between board and controls */
+  justify-content: center;
+  align-items: flex-start; /* Align board and controls at top */
+  width: 100%;
+}
+
+.controls-panel {
+  flex: 1; /* Take remaining space */
+  min-width: 300px; /* Ensure controls panel doesn't get too small */
+  background-color: #f9fbfb;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-info {
+  text-align: center;
+  width: 100%;
+}
+
+.current-turn {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.player-turn-name {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.player-turn-name.player1 {
+  background-color: #007bff;
+}
+
+.player-turn-name.player2 {
+  background-color: #dc3545;
+}
+
+.game-message {
+  font-size: 1.1em;
+  min-height: 40px; /* Prevent layout shift */
+  color: #4CAF50; /* Green for positive messages */
+  font-weight: 500;
+  animation: fadeInOut 2s ease-in-out; /* Fade message */
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.player-scores {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+.player1-score { color: #007bff; font-weight: bold; }
+.player2-score { color: #dc3545; font-weight: bold; }
+
+.reset-button {
+  padding: 12px 30px;
+  font-size: 1.1em;
+  background-color: #28a745; /* Green */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.reset-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .game-area {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,39 @@
+.setup-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  background-color: #121212;
+  color: white;
+  border-radius: 10px;
+}
+
+.player-setup {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+input, select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #2196F3;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #777;
+}
+
+.error {
+  color: red;
+}

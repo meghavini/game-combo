@@ -1,0 +1,38 @@
+/* src/styles/Cell.css */
+.cell {
+  width: 100%; /* Take full width of grid column */
+  height: 100%; /* Take full height of grid row */
+  border: 1px solid #bdc3c7; /* Light border between cells */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #ffffff; /* Default cell background */
+  position: relative; /* For player positioning */
+  box-sizing: border-box; /* Include padding/border in cell dimensions */
+  padding: 5px;
+  transition: background-color 0.2s ease;
+}
+
+/* Stripe effect for board */
+.cell:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+.cell-number {
+  font-weight: bold;
+  color: #7f8c8d;
+  font-size: 0.9em;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.cell-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

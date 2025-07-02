@@ -1,0 +1,125 @@
+/* Setup screen */
+.setup-container {
+  max-width: 400px;
+  margin: 30px auto;
+  background: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  text-align: center;
+}
+
+.setup-container h2 {
+  margin-bottom: 20px;
+}
+
+.player-setup {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.player-setup input,
+.player-setup select {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #00b4d8;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff5555;
+  font-size: 14px;
+}
+
+.board-15x15 {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  width: 600px;
+  height: 600px;
+  border: 3px solid #222;
+  background-color: #fff;
+  margin: 20px auto;
+}
+
+.row {
+  display: contents; /* allows cells to wrap correctly in grid */
+}
+
+.cell {
+  border: 1px solid #ddd;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.token {
+  transition: top 0.4s ease, left 0.4s ease;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.dice-roll {
+  animation: rollDice 0.4s ease-in-out;
+}
+
+.token.highlight {
+  box-shadow: 0 0 10px 3px yellow;
+  animation: pulse 0.8s infinite ease-in-out;
+}
+
+.board-wrapper {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+.token {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+
+@keyframes rollDice {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); scale: 1.2; }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+@keyframes tokenPop {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
